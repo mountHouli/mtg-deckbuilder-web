@@ -10,6 +10,7 @@
     "webpack-dev-server": "^4.10.0"
   },
   "scripts": {
-    "build": "webpack-cli --mode=development"
+    "build": "webpack-cli --mode=development",
+    "start": "webpack serve --open --mode=development"
   }
 }
