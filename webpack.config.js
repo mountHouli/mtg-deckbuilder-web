@@ -1,7 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const mode = (process.env.NODE_ENV !== 'production' ? 'development' : 'production')
 
@@ -11,10 +11,10 @@ const deploymentLevelSpecificConfigs = {
       jsx: {
         use: {
           production: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
           },
           development: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               plugins: [
                 require.resolve('react-refresh/babel'),
@@ -28,22 +28,22 @@ const deploymentLevelSpecificConfigs = {
   plugins: {
     production: [
       new HtmlWebpackPlugin({
-        filename: "index.html",
-        template: path.join(__dirname, "src", "index.template.html")
+        filename: 'index.html',
+        template: path.join(__dirname, 'src', 'index.template.html')
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].css",
-        chunkFilename: "[id].css"
+        filename: '[name].css',
+        chunkFilename: '[id].css'
       }),
     ],
     development: [
       new HtmlWebpackPlugin({
-        filename: "index.html",
-        template: path.join(__dirname, "src", "index.template.html")
+        filename: 'index.html',
+        template: path.join(__dirname, 'src', 'index.template.html')
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].css",
-        chunkFilename: "[id].css"
+        filename: '[name].css',
+        chunkFilename: '[id].css'
       }),
       new ReactRefreshWebpackPlugin(),
     ]
@@ -60,7 +60,7 @@ module.exports = {
       {
         test: /.(js|jsx)$/,
         resolve: {
-          extensions: [".js", ".jsx"]
+          extensions: ['.js', '.jsx']
         },
         exclude: /node_modules/,
         use: deploymentLevelSpecificConfigs.module.rules.jsx.use[mode],
@@ -68,7 +68,7 @@ module.exports = {
       {
         test: /.(css|scss)$/,
         use: [
-          MiniCssExtractPlugin.loader, "css-loader", "sass-loader"
+          MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
         ]
       }
     ]
@@ -80,8 +80,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: path.join(__dirname, "src", "index.template.html")
+      filename: 'index.html',
+      template: path.join(__dirname, 'src', 'index.template.html')
     }),
   ],
   plugins: deploymentLevelSpecificConfigs.plugins[mode],
