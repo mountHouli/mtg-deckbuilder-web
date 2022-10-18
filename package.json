@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "webpack-cli --mode=development",
-    "start": "webpack serve --open --mode=development"
+    "start": "webpack serve --mode=development"
   },
   "dependencies": {
     "react": "^18.2.0",
