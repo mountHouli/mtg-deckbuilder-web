@@ -1,8 +1,10 @@
 import React from 'react'
 
+import "../styles/app.scss"
+
 const App = () => {
   return (
-    <div style={{color: 'red'}}>
+    <div className='main'>
       <h1>
         React Page.
       </h1>
