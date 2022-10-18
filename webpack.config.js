@@ -1,7 +1,48 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+
+const mode = (process.env.NODE_ENV !== 'production' ? 'development' : 'production')
+
+const deploymentLevelSpecificConfigs = {
+  module: {
+    rules: {
+      jsx: {
+        use: {
+          production: {
+            loader: "babel-loader",
+          },
+          development: {
+            loader: "babel-loader",
+            options: {
+              plugins: [
+                require.resolve('react-refresh/babel'),
+              ]
+            },
+          }
+        }
+      }
+    }
+  },
+  plugins: {
+    production: [
+      new HtmlWebpackPlugin({
+        filename: "index.html",
+        template: path.join(__dirname, "src", "index.template.html")
+      }),
+    ],
+    development: [
+      new HtmlWebpackPlugin({
+        filename: "index.html",
+        template: path.join(__dirname, "src", "index.template.html")
+      }),
+      new ReactRefreshWebpackPlugin(),
+    ]
+  }
+}
 
 module.exports = {
+  mode,
   entry: {
     index: path.join(__dirname, 'src', 'index.js'),
   },
@@ -10,9 +51,7 @@ module.exports = {
       {
         test: /.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        use: deploymentLevelSpecificConfigs.module.rules.jsx.use[mode],
       }
     ]
   },
@@ -27,4 +66,8 @@ module.exports = {
       template: path.join(__dirname, "src", "index.template.html")
     }),
   ],
+  plugins: deploymentLevelSpecificConfigs.plugins[mode],
+  devServer: {
+    hot: true,
+  },
 }

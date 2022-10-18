@@ -2,9 +2,9 @@ import React from 'react'
 
 const App = () => {
   return (
-    <div>
+    <div style={{color: 'red'}}>
       <h1>
-        React Page
+        React Page.
       </h1>
     </div>
   )
