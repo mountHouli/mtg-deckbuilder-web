@@ -1,2 +1,3 @@
-# notes-web
-Notes App. Front End.
+# mtg-deckbuilder-web
+
+MTG DeckBuilder, front end.
