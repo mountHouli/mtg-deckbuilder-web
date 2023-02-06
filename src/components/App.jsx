@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/app.scss'
+import '../styles/styles-root.scss'
 import Page from './Page'
 
 const App = () => {
