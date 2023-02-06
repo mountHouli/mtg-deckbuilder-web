@@ -1,13 +1,12 @@
 import React from 'react'
 
 import '../styles/app.scss'
+import Page from './Page'
 
 const App = () => {
   return (
     <div className='main'>
-      <h1>
-        React Page.
-      </h1>
+      <Page/>
     </div>
   )
 }
