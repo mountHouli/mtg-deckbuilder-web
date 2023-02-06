@@ -1,5 +1,9 @@
 import React from 'react'
 
+import config from '../config/config'
+
+const { scryfallCardNameUrl } = config
+
 class CardSearch extends React.Component {
   constructor() {
     super()
@@ -9,8 +13,15 @@ class CardSearch extends React.Component {
     }
   }
 
-  handleClick() {
-    console.log('TODO: Write the click handler!')
+  async handleClick() {
+    const { cardName } = this.state
+
+    const url = `${scryfallCardNameUrl}?exact=${cardName}`
+
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log('TODO: Do something with the data')
+    console.log(data) 
   }
 
   handleCardNameChange(e) {
