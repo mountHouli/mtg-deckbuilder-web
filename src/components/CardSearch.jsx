@@ -13,7 +13,8 @@ class CardSearch extends React.Component {
     }
   }
 
-  async handleClick() {
+  async handleSubmit(e) {
+    e.preventDefault()
     const { cardName } = this.state
 
     const url = `${scryfallCardNameUrl}?exact=${cardName}`
@@ -35,8 +36,10 @@ class CardSearch extends React.Component {
 
     return (
       <div>
-        <input onChange={(e) => this.handleCardNameChange(e)} value={cardName}></input>
-        <button onClick={() => this.handleClick()}>SEARCH</button>
+        <form>
+          <input onChange={(e) => this.handleCardNameChange(e)} value={cardName}></input>
+          <button type="submit" onClick={(e) => this.handleSubmit(e)}>SEARCH</button>
+        </form>
       </div>
     )
   }
