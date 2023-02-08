@@ -1,0 +1,13 @@
+body {
+  background-color: $LIGHT_WHITE;
+  font-family: sans-serif;
+}
+
+input {
+  font-family: sans-serif;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
