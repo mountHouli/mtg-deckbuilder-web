@@ -9,6 +9,7 @@ input {
   font-family: sans-serif;
 }
 
+textarea:focus,
 input:focus {
   outline: none;
 }
@@ -21,6 +22,11 @@ input:focus {
   padding-bottom: $PADDING__HEADER_VERTICAL;
   padding-left: $PADDING__STANDARD;
   padding-right: $PADDING__STANDARD;
+}
+
+.card-search-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .card-search-form {
@@ -51,4 +57,13 @@ input:focus {
 
   padding: $PADDING__STANDARD;
   margin-top: 10px;
+}
+
+.card-data-textarea {
+  height: 300px;
+
+  border: none;
+  resize: none;
+
+  background-color: $DARK_WHITE;
 }
