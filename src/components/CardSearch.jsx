@@ -36,9 +36,9 @@ class CardSearch extends React.Component {
 
     return (
       <div>
-        <form>
-          <input onChange={(e) => this.handleCardNameChange(e)} value={cardName}></input>
-          <button type="submit" onClick={(e) => this.handleSubmit(e)}>SEARCH</button>
+        <form className="card-search-form">
+          <input onChange={(e) => this.handleCardNameChange(e)} value={cardName} className='card-search-input' placeholder="Card name" />
+          <button type="submit" onClick={(e) => this.handleSubmit(e)} className='card-search-submit-button'>Look it up!</button>
         </form>
       </div>
     )
