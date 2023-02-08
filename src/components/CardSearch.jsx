@@ -17,7 +17,7 @@ class CardSearch extends React.Component {
     e.preventDefault()
     const { cardName } = this.state
 
-    const url = `${scryfallCardNameUrl}?exact=${cardName}`
+    const url = `${scryfallCardNameUrl}?fuzzy=${cardName}`
 
     const response = await fetch(url)
     const data = await response.json()
