@@ -21,8 +21,6 @@ class CardSearch extends React.Component {
 
     const response = await fetch(url)
     const data = await response.json()
-    console.log('TODO: Do something with the data')
-    console.log(data)
 
     this.setState({
       cardName,
