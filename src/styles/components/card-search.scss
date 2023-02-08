@@ -1,0 +1,43 @@
+.card-search-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-search-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-search-input {
+  background-color: $DARK_WHITE;
+  color: $LIGHT_BLUE;
+
+  border: none;
+
+  font-size: $FONT_SIZE__LOOKUP_WIDGET;
+  padding: $PADDING__STANDARD;
+}
+
+.card-search-submit-button {
+  background-color: $DARK_BLUE;
+  color: $LIGHT_WHITE;
+
+  border: none;
+
+  font-size: $FONT_SIZE__LOOKUP_WIDGET;
+  text-align: left;
+
+  width: 196px;
+
+  padding: $PADDING__STANDARD;
+  margin-top: 10px;
+}
+
+.card-data-textarea {
+  height: 300px;
+
+  border: none;
+  resize: none;
+
+  background-color: $DARK_WHITE;
+}

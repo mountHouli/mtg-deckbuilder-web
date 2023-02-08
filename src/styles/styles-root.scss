@@ -1,69 +1,9 @@
-@import './constants.scss';
+// SASS Constants and Definitions
+@import './constants';
 
-body {
-  background-color: $LIGHT_WHITE;
-  font-family: sans-serif;
-}
+// Global Styles
+@import './globals';
 
-input {
-  font-family: sans-serif;
-}
-
-textarea:focus,
-input:focus {
-  outline: none;
-}
-
-.header-container {
-  color: $DARK_BLUE;
-  font-size: 70px;
-
-  padding-top: $PADDING__HEADER_VERTICAL;
-  padding-bottom: $PADDING__HEADER_VERTICAL;
-  padding-left: $PADDING__STANDARD;
-  padding-right: $PADDING__STANDARD;
-}
-
-.card-search-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.card-search-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.card-search-input {
-  background-color: $DARK_WHITE;
-  color: $LIGHT_BLUE;
-
-  border: none;
-
-  font-size: $FONT_SIZE__LOOKUP_WIDGET;
-  padding: $PADDING__STANDARD;
-}
-
-.card-search-submit-button {
-  background-color: $DARK_BLUE;
-  color: $LIGHT_WHITE;
-
-  border: none;
-
-  font-size: $FONT_SIZE__LOOKUP_WIDGET;
-  text-align: left;
-
-  width: 196px;
-
-  padding: $PADDING__STANDARD;
-  margin-top: 10px;
-}
-
-.card-data-textarea {
-  height: 300px;
-
-  border: none;
-  resize: none;
-
-  background-color: $DARK_WHITE;
-}
+// Component Styles
+@import './components/card-search';
+@import './components/header';
