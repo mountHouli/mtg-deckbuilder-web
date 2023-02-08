@@ -43,7 +43,7 @@ class CardSearch extends React.Component {
           <input onChange={(e) => this.handleCardNameChange(e)} value={cardName} className='card-search-input' placeholder="Card name" />
           <button type="submit" onClick={(e) => this.handleSubmit(e)} className='card-search-submit-button'>Look it up!</button>
         </form>
-        <textarea className="card-data-textarea" value={cardData}></textarea>
+        <textarea readOnly className="card-data-textarea" value={cardData}></textarea>
       </div>
     )
   }
