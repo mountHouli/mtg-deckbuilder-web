@@ -23,7 +23,8 @@
   },
   "scripts": {
     "build": "NODE_ENV=development webpack-cli",
-    "start": "NODE_ENV=development webpack serve"
+    "start": "NODE_ENV=development webpack serve",
+    "test": "jest --watch"
   },
   "dependencies": {
     "react": "^18.2.0",
