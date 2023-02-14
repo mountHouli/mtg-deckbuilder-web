@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CardSearch from './CardSearch'
+import CardSearch from 'components/CardSearch'
 
 const Page = () => {
   return (
